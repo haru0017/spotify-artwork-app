@@ -9,7 +9,7 @@
       <vtextarea></vtextarea>
       <getimagebtn></getimagebtn>
     </div>
-    <div v-if="this.$accessor.error_message.length" class="mt-12">
+    <div v-if="this.$accessor.error_message.length" class="text-sm md:text-lg mt-12">
       <erroralert></erroralert>
     </div>
   </div>
