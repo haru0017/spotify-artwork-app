@@ -1,6 +1,6 @@
 # spotify-artwork-app
 
-![sample image](https://user-images.githubusercontent.com/61040486/106358875-3bff7e80-6352-11eb-91c1-8857560aa3d7.JPG)
+![sample image](https://user-images.githubusercontent.com/61040486/107219541-98e6ed00-6a54-11eb-9928-48d482859720.gif)
 
 Spotify artwork viewer inspired by itunes artwork screensaver.  
 
