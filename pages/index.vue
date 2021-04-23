@@ -1,10 +1,11 @@
 <template>
   <div class="text-center mt-24 mx-2 md:mt-44 mb-6">
-    <h1 class="text-3xl md:text-5xl">spotify-artwork-app</h1>
+    <h1 class="text-3xl md:text-5xl">Sav</h1>
     <h2 class="text-lg md:text-2xl mt-8">
-      Spotify artwork viewer inspired by itunes artwork screensaver. <br>
-      Enter Playlist Link in the text area and click getPlaylistImages to get started.
+      Sav (Spotify artwork viewer) inspired by itunes artwork screensaver. <br>
+      Enter Playlist Link below and click getPlaylistImages to get started.
     </h2>
+    <h4 class="texl-sm md:text-lg mt-2 mb-4">Press the button without link, global top 50 playlists will show.</h4>
     <div class="text-base md:text-xl mt-8">
       <vtextarea></vtextarea>
       <getimagebtn></getimagebtn>
