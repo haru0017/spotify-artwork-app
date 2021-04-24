@@ -186,6 +186,17 @@ export const actions = actionTree(
             alternative_images_url.shift()
           }
         }
+
+        // shuffle images_url
+        for (let i = images_url.length - 1; i >= 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1))
+          // not working Destructuring assignment
+          const tmp = images_url[i]
+          images_url[i] = images_url[j]
+          images_url[j] = tmp
+        }
+
+        // commit
         commit('update_imagesUrl', images_url)
         commit('update_alternative_imagesUrl', alternative_images_url)
         commit('update_erorr_message', '')
