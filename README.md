@@ -12,7 +12,7 @@ You can get started by opening a [web page](https://spotify-artwork-app.vercel.a
 
 Playlist links can be easily obtained from playlist sharing operations such as the spotify app. If you press the getplaylistimage button without entering the playlist link, spotify global top 50 playlists will be entered by default. An example is the image below
 
-![sample image](https://user-images.githubusercontent.com/61040486/107219541-98e6ed00-6a54-11eb-9928-48d482859720.gif)
+![sample image](https://user-images.githubusercontent.com/61040486/115978381-d66e0780-a5b9-11eb-81bd-cceb786b9814.gif)
 
 ## Future
 
