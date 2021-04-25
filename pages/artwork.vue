@@ -1,12 +1,14 @@
 <template>
-  <div id="fullscreen" class="bg-black text-center w-full h-full fixed top-0 left-0 text-0">
-    <p
-      v-for="(image, index) in this.$accessor.images_url"
-      :key="`image-${index}`"
+  <div id="fullscreen" class="bg-black text-center fixed w-full h-full top-0 left-0 text-0">
+    <!-- Ignore the error because set key in the img element instead of the div element for the transition -->
+    <div
+      v-for="image in this.$accessor.images_url"
       class="inline-block"
     >
-      <img :src="image" alt="artwork-image" class="w-44 h-44 md:w-60 md:h-60 artwork-image"/>
-    </p>
+      <transition name="imgRotate" mode="out-in">
+        <img :src="image" alt="artwork-image" :key="image" class="w-44 h-44 md:w-60 md:h-60 artwork-image"/>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -21,12 +23,7 @@ export default Vue.extend({
   },
 
   mounted() {
-    const el = document.getElementsByClassName('artwork-image')
-    const idName = 'image'
-    for (let i = 0; i < el.length; i++) {
-      el[i].setAttribute('id', `${idName}_${i}`)
-    }
-    this.$accessor.set_timer(window.setInterval(this.change_image, 2000))
+    this.$accessor.set_timer(window.setInterval(this.change_image, 1200))
     this.fullscreen()
   },
 
@@ -43,39 +40,26 @@ export default Vue.extend({
     },
 
     change_image() {
-      if (process.client) {
-        const randImageIndex = Math.floor(
-          Math.random() * this.$accessor.images_url.length
-        )
-        const randAlternativeImageIndex = Math.floor(
-          Math.random() * this.$accessor.alternative_images_url.length
-        )
-        const image = document.getElementById(
-          `image_${randImageIndex}`
-        ) as HTMLImageElement
-        let opacity = 1.0
-        let interval = setInterval(() => {
-          opacity -= 0.025
-          image.style.opacity = `${opacity}`
-          if (opacity <= 0) {
-            clearInterval(interval)
-            image.src = this.$accessor.alternative_images_url[randAlternativeImageIndex]
-            this.$accessor.swap_url({
-              rand_image_index: randImageIndex,
-              rand_alternative_image_index: randAlternativeImageIndex,
-            })
-            opacity = 0
-            interval = setInterval(() => {
-              opacity += 0.025
-              image.style.opacity = `${opacity}`
-              if (opacity >= 1) {
-                clearInterval(interval)
-              }
-            }, 25)
-          }
-        }, 25)
-      }
+      const randImageIndex = Math.floor(
+        Math.random() * this.$accessor.images_url.length
+      )
+      const randAlternativeImageIndex = Math.floor(
+        Math.random() * this.$accessor.alternative_images_url.length
+      )
+      this.$accessor.swap_url({
+        rand_image_index: randImageIndex,
+        rand_alternative_image_index: randAlternativeImageIndex,
+      })
     },
   },
 })
 </script>
+
+<style scoped>
+  .imgRotate-enter-active, .imgRotate-leave-active {
+    transition: 0.5s linear;
+  }
+  .imgRotate-enter, .imgRotate-leave {
+    transform: rotateY(90deg);
+  }
+</style>
