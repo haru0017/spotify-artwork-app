@@ -52,10 +52,10 @@ export const mutations = mutationTree(state, {
     state.alternative_images_url = new_alternative_images_url
   },
   swap_images(state, index: {rand_image_index: number, rand_alternative_image_index: number}): void {
+    // Change the contents of the array in a way that vue can recognize
     let tmp = state.images_url[index.rand_image_index]
-    state.images_url[index.rand_image_index] =
-      state.alternative_images_url[index.rand_alternative_image_index]
-    state.alternative_images_url[index.rand_alternative_image_index] = tmp
+    state.images_url.splice(index.rand_image_index, 1, state.alternative_images_url[index.rand_alternative_image_index])
+    state.alternative_images_url.splice(index.rand_alternative_image_index, 1, tmp)
   },
   update_timer(state, new_timer: number): void {
     state.timer = new_timer
