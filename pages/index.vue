@@ -3,11 +3,11 @@
     <h1 class="text-3xl md:text-5xl">Sav</h1>
     <h2 class="text-lg md:text-2xl mt-8">
       Sav (Spotify artwork viewer) inspired by itunes artwork screensaver. <br>
-      Enter Playlist Link below and click getPlaylistImages to get started.
+      Enter Playlist Link below and click "get started"
     </h2>
-    <h4 class="texl-sm md:text-lg mt-2 mb-4">Press the button without link, global top 50 playlists will show.</h4>
+    <h4 class="texl-sm md:text-lg mt-2 mb-4">Without link, global top 50 playlists will show.</h4>
     <div class="text-base md:text-xl mt-8">
-      <vtextarea class="mr-0 mb-3 md:mb-0 md:mr-5"></vtextarea>
+      <vtextarea class="mb-3 md:mb-0 md:mr-5"></vtextarea>
       <getimagebtn></getimagebtn>
     </div>
     <div v-if="this.$accessor.error_message.length" class="text-sm md:text-lg mt-12">

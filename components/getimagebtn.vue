@@ -3,7 +3,7 @@
     class="border-2 border-solid border-gray-800 py-3 px-4 rounded-sm"
     @click="getPlaylistImages"
   >
-    getPlaylistImages
+    get started
   </button>
 </template>
 
