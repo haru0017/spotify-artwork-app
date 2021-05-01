@@ -7,7 +7,7 @@
     </h2>
     <h4 class="texl-sm md:text-lg mt-2 mb-4">Press the button without link, global top 50 playlists will show.</h4>
     <div class="text-base md:text-xl mt-8">
-      <vtextarea></vtextarea>
+      <vtextarea class="mr-0 mb-3 md:mb-0 md:mr-5"></vtextarea>
       <getimagebtn></getimagebtn>
     </div>
     <div v-if="this.$accessor.error_message.length" class="text-sm md:text-lg mt-12">

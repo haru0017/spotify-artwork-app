@@ -1,7 +1,7 @@
 <template>
   <input
     aria-label="playlist link form"
-    class="border-2 border-solid border-gray-800 py-3 px-4 rounded-sm mr-0 mb-3 md:mb-0 md:mr-5"
+    class="border-2 border-solid border-gray-800 py-3 px-4 rounded-sm"
     type="text"
     name="updatePlaylistURL"
     placeholder="playlist link"
